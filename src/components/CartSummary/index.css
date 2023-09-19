@@ -1,0 +1,30 @@
+/* Write your CSS here */
+.cart-value-heading {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 26px;
+  color: #616e7c;
+}
+
+.total-amount {
+  font-family: 'Roboto';
+  font-weight: 800;
+  font-size: 30px;
+  color: #171f46;
+}
+
+.item-count {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  color: #616e7c;
+}
+
+.check-out-btn {
+  background-color: #0b69ff;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  color: #ffffff;
+}
