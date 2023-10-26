@@ -6,8 +6,9 @@ import './index.css'
 
 class LoginForm extends Component {
   state = {
-    username: '',
-    password: '',
+    username: 'rahul',
+    password: 'rahul@2021',
+    showPassword: false,
     showSubmitError: false,
     errorMsg: '',
   }
@@ -51,22 +52,37 @@ class LoginForm extends Component {
     }
   }
 
-  renderPasswordField = () => {
-    const {password} = this.state
+  onClickShowPassword = () => {
+    this.setState(prevState => ({
+      showPassword: !prevState.showPassword,
+    }))
+  }
 
+  renderPasswordField = () => {
+    const {password, showPassword} = this.state
     return (
       <>
         <label className="input-label" htmlFor="password">
           PASSWORD
         </label>
         <input
-          type="password"
+          type={showPassword ? 'text' : 'password'}
           id="password"
           className="password-input-field"
           value={password}
           onChange={this.onChangePassword}
-          placeholder="Password"
         />
+        <div className="showPassword">
+          <input
+            type="checkbox"
+            className="checkbox"
+            id="showPassword"
+            onChange={this.onClickShowPassword}
+          />
+          <label htmlFor="showPassword" className="checkboxLabel">
+            Show Password
+          </label>
+        </div>
       </>
     )
   }

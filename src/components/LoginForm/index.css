@@ -136,3 +136,20 @@
   line-height: 16px;
   color: #ff0b37;
 }
+
+.showPassword {
+  display: flex;
+  align-self: flex-start;
+  justify-content: start;
+}
+
+.checkboxLabel {
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #475569;
+  margin: 20px 5px;
+}
+
+.checkbox {
+  width: 16px;
+}
