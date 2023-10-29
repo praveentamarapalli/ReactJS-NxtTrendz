@@ -12,12 +12,12 @@ import CartContext from './context/CartContext'
 
 import './App.css'
 
+const localStoredCartList = JSON.parse(localStorage.getItem('cartList'))
+
 class App extends Component {
   state = {
-    cartList: [],
+    cartList: localStoredCartList === null ? [] : localStoredCartList,
   }
-
-  //   TODO: Add your code for remove all cart items, increment cart item quantity, decrement cart item quantity, remove cart item
 
   removeAllCartItems = () => {
     this.setState({cartList: []})
@@ -89,6 +89,8 @@ class App extends Component {
 
   render() {
     const {cartList} = this.state
+
+    localStorage.setItem('cartList', JSON.stringify(cartList))
 
     return (
       <CartContext.Provider

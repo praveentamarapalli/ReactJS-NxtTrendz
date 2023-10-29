@@ -1,7 +1,9 @@
 import React from 'react'
 
+const localStoredCartList = JSON.parse(localStorage.getItem('cartList'))
+
 const CartContext = React.createContext({
-  cartList: [],
+  cartList: localStoredCartList === null ? [] : localStoredCartList,
   removeAllCartItems: () => {},
   addCartItem: () => {},
   removeCartItem: () => {},
